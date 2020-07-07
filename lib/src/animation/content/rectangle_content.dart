@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:ui';
+import 'package:vector_math/vector_math_64.dart';
 import '../../lottie_drawable.dart';
 import '../../lottie_property.dart';
 import '../../model/content/rectangle_shape.dart';
@@ -95,13 +96,13 @@ class RectangleContent implements KeyPathElementContent, PathContent {
 
     if (radius > 0) {
       _path.arcTo(
-          Rect.fromLTWH(
+          Rect.fromLTRB(
               position.dx + halfWidth - 2 * radius,
               position.dy + halfHeight - 2 * radius,
               position.dx + halfWidth,
               position.dy + halfHeight),
           0,
-          90,
+          radians(90),
           false);
     }
 
@@ -109,13 +110,13 @@ class RectangleContent implements KeyPathElementContent, PathContent {
 
     if (radius > 0) {
       _path.arcTo(
-          Rect.fromLTWH(
+          Rect.fromLTRB(
               position.dx - halfWidth,
               position.dy + halfHeight - 2 * radius,
               position.dx - halfWidth + 2 * radius,
               position.dy + halfHeight),
-          90,
-          90,
+          radians(90),
+          radians(90),
           false);
     }
 
@@ -123,13 +124,13 @@ class RectangleContent implements KeyPathElementContent, PathContent {
 
     if (radius > 0) {
       _path.arcTo(
-          Rect.fromLTWH(
+          Rect.fromLTRB(
               position.dx - halfWidth,
               position.dy - halfHeight,
               position.dx - halfWidth + 2 * radius,
               position.dy - halfHeight + 2 * radius),
-          180,
-          90,
+          radians(180),
+          radians(90),
           false);
     }
 
@@ -137,13 +138,13 @@ class RectangleContent implements KeyPathElementContent, PathContent {
 
     if (radius > 0) {
       _path.arcTo(
-          Rect.fromLTWH(
+          Rect.fromLTRB(
               position.dx + halfWidth - 2 * radius,
               position.dy - halfHeight,
               position.dx + halfWidth,
               position.dy - halfHeight + 2 * radius),
-          270,
-          90,
+          radians(270),
+          radians(90),
           false);
     }
     _path.close();

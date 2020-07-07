@@ -11,14 +11,13 @@ dependencies:
   lottie:
     path: ../
   flutter_colorpicker:
+  path_provider:
+  http:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   golden_toolkit:
-
-dependency_overrides:
-  pedantic: ^1.9.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -35,6 +34,9 @@ flutter:
     - assets/Logo/
     - assets/Images/
     - assets/Images/WeAccept/
+    - assets/Weather/
+    - assets/example_with_images/
+    - assets/example_with_images/images/
 
   fonts:
     - family: Comic Neue
